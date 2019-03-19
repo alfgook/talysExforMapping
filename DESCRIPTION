@@ -1,0 +1,20 @@
+Package: talysExforMapping
+Type: Package
+Title: Map Data between TALYS and EXFOR
+Version: 0.1.0
+Authors@R: c(person("Georg", "Schnabel", role = c("aut", "cre"),
+                    email = "georg.schnabel@nucleardata.com"))
+Author: Georg Schnabel [aut, cre]
+Maintainer: Georg Schnabel  <georg.schnabel@nucleardata.com>
+Depends:
+    R (>= 3.1.0)
+Description: TALYS predictions can be mapped to the same observables
+    as the EXFOR data for convenient comparison.
+    EXFOR data can be used to determine which TALYS calculations must
+    be performed to enable a comparison.
+License: GPL (>=3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: testthat
+Imports: data.table
