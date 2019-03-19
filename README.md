@@ -1,6 +1,6 @@
 ### talysExforMapping - R package
 
-This package enables the mapping from predictions of TALYS to the observables
+This package enables the mapping from predictions by TALYS to the observables
 recorded in EXFOR entries. For instance, a cross section associated with a
 target in natural composition requires the collection and summation of 
 data in files produced by several TALYS calculations. 
@@ -10,7 +10,7 @@ predict the observables recorded in EXFOR entries.
 ## Requirements
 
 The R packages `data.table` and `Matrix` available on CRAN are prerequisites. 
-Further, the custom R package `json ExforUtils` is required whose installation
+Further, the custom R package `jsonExforUtils` is required whose installation
 will also be discussed in the next section.
 
 ## Installation
