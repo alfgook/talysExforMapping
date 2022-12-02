@@ -145,8 +145,14 @@ createSubentHandler_ntot <- function() {
     particleStr <- generateTalysParticleStr(sub("INL", proj, process))  # replace INL by projectile
     energy <- subent$DATA$TABLE$EN[rowidcs]
 
-    talysReacStr <- if (is.null(particleStr)) paste0("CS/", process) else
+    talysReacStr <- if (is.null(particleStr)) {
+      paste0("CS/", process)
+    } else if(particleStr=="XXXXXX") {
+      particleStr <- paste0(sprintf("%03d", reacStruc$residual$Z),sprintf("%03d", reacStruc$residual$A))
+      paste0("CS/PROD/", particleStr, "/TOT")
+    } else {
       paste0("CS/REAC/", particleStr, "/TOT")
+    }
 
     proj <- sub("HE3", "H", proj)  # convert HE3 to talys notation
 
@@ -178,8 +184,14 @@ createSubentHandler_ntot <- function() {
     curProc <- reacStruc$process
 
     particleStr <- generateTalysParticleStr(sub("INL", curProj, curProc))
-    talysReacStr <- if (is.null(particleStr)) paste0("CS/", curProc) else
+    talysReacStr <- if (is.null(particleStr)) {
+      paste0("CS/", curProc)
+    } else if(particleStr=="XXXXXX") {
+      particleStr <- paste0(sprintf("%03d", reacStruc$residual$Z),sprintf("%03d", reacStruc$residual$A))
+      paste0("CS/PROD/", particleStr, "/TOT")
+    } else {
       paste0("CS/REAC/", particleStr, "/TOT")
+    }
 
     curProj <- sub("HE3", "H", curProj)  # convert HE3 to talys notation
 
@@ -222,8 +234,14 @@ createSubentHandler_ntot <- function() {
     curProc <- reacStruc$process
 
     particleStr <- generateTalysParticleStr(sub("INL", curProj, curProc))
-    talysReacStr <- if (is.null(particleStr)) paste0("CS/", curProc) else
+    talysReacStr <- if (is.null(particleStr)) {
+      paste0("CS/", curProc)
+    } else if(particleStr=="XXXXXX") {
+      particleStr <- paste0(sprintf("%03d", reacStruc$residual$Z),sprintf("%03d", reacStruc$residual$A))
+      paste0("CS/PROD/", particleStr, "/TOT")
+    } else {
       paste0("CS/REAC/", particleStr, "/TOT")
+    }
 
     curProj <- sub("HE3", "H", curProj)  # convert HE3 to talys notation
 

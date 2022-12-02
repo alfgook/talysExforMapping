@@ -37,6 +37,8 @@ generateTalysParticleStr <- function(processStr) {
     names(numAry) <- c("N","P","D","T","HE3","A")
     numAry[particleStrs] <- ifelse (numStrs=="", 1, as.numeric(numStrs))
     paste0(numAry, collapse="")
+  } else if(processStr=="X") {
+    "XXXXXX"
   } else NULL
 }
 
