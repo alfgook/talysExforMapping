@@ -99,7 +99,7 @@ createSubentHandler_ntot <- function() {
 
     # not handling if DATA and EN not present
     if (! all(c("EN", "DATA") %in% subent$DATA$DESCR))
-      return(retmsg("EN and DATA column are missing", 6))
+      return(retmsg("EN and/or DATA column are missing", 6))
 
     # not handling units different from MEV and MB
     if (subent$DATA$UNIT[subent$DATA$DESCR=="EN"] != "MEV" ||
